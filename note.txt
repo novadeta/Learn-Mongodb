@@ -1,0 +1,26 @@
+Mongodb
+mongodb tidak menggunakan SQL.namun menggunakan javascript sebagai bahasa utama untuk
+manipulasi document
+
+Mongodb -> Not Only Sql
+
+> Relational Database biasanya menyimpan data dalam bentuk table,dan menyimpan
+data dalam bentuk table,dan relasinya disimpan di table lain
+> Document oriented database biasanya menyimpan data dalam bentuk JSON
+dan menyimpan relasinya sebagai embedded object di dalam document yang sama
+
+Istilah Relational vs Document
+Table - Collection
+Column - Field
+Row,Record - Document
+Join Table - Embedded Document,Referebce
+SQL - Js(Mongodb)
+
+DATABASE
+tempat untuk menyimpan Collection
+semua collection harus disimpan di database
+
+Command Mongodb CLI
+
+use -> membuat database/berpindah database
+show databases/dbs -> melihat semua database
