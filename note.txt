@@ -24,3 +24,20 @@ Command Mongodb CLI
 
 use -> membuat database/berpindah database
 show databases/dbs -> melihat semua database
+db.dropDatabase() -> delete database
+db.getName() > ambil nama database
+db.hostInfo() > ambil info host tempat mongodb
+db.version() > .....
+db.stats() > ambil 
+
+Collection
+
+tempat menyimpan document
+max per document yang bisa disimpan adalah 16mb
+maximum level nested document yang bisa disimpan adalah 100 level
+
+db.getCollectionNames() > ambil semua nama collection
+createCollection(name) > membuat collection baru
+getcollection() > ambil object createCollection
+db.<name> > sama dengan getcollection
+
