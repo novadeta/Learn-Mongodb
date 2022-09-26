@@ -76,3 +76,38 @@ Reference :
 lain
 > Bisa melakukan manipulasi data langsung terhadap reference document
 > REference document tidak selalu dibuthkan saat mengambil document
+
+BSON
+binary JSON yaitu binary encoded serialization document seperti JSON 
+kenapa mongodb itu menggunakan BSON karena mongodb itu mendukung tipe data yang bukan
+text contohnya img 
+
+Objectid
+random data yang unik,cepat untuk digenerate dan terurut
+niali objectid memiliki ukuran panjang 12 byte,konsisten terdiri dari 
+informasi 4 byte timestamp,5 byte random value dan 3 byte incrementing counter
+obejctid digunakan sebagai default _id primary key di document jika kita tidak secara
+eksplisit menyebutkan _id documentnya
+
+Date dan ISODate
+64 vit integer yang mempresentasikan angka milisecond sejak unix epoch
+nilai ini bisa merepresentasikan waktu dengan jarak 290juta tahun sebelum
+dan setelah unix epoch
+ISODate mereupakan representasi waktu yang digunakan oleh mongoDB
+Date ini kompatibel dengan Date JS
+
+Query Document
+sama seperti di relational DB,di mongodb kita bisa melakukan query atau 
+pencarian document yang sudah kita simpan di collection
+
+
+Comparison Query Operator
+
+$eq > membandingkan value dengan value lain
+$gt > membandingkan value lebih besat dari value lain
+$gte > membandingkan value lebih besar atau sama dengan value lain
+$lt > membandingkan value lebih kecil dari value lain
+$lte > membandingkan value lebih kecil atau sama dengan value lain
+$in > membandingkan value dengan value yang ada di array
+$nin > membandingkan value tidak ada dalam value yang ada di array
+$ne > membandingkan value tidak sama dengan value lain
