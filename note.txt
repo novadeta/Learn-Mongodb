@@ -41,3 +41,25 @@ createCollection(name) > membuat collection baru
 getcollection() > ambil object createCollection
 db.<name> > sama dengan getcollection
 
+db.<collection>.find() > mencari document
+db.<collection>.drop() > hapus collection
+db.<collection>.count() > menghitung document di collection
+
+Data Model
+pindah dari relational db ke document db bukanlah hal yang sesederhana
+hanya dengan memindahkan  semua table ke collection
+
+Schema yang flexible
+> di mongodb kita bisa memasukkan data ke collection secara langsung  tanpa mendefinisikan 
+schema collectionnya
+> Scehma untuk collection di mongodb sangat flexible,tiap document bisa berbeda.tidak seperti
+realtional database setiap record harus sama
+> namun pada prakteknya,sangat direkomendasikan menggunakan jenis data yang sama
+untuk tiap collection,walaupun bisa berbeda beda di collection yang sama.
+
+Primary Key
+saat membuat document di mongodb,kita wajib menambahkan primary key
+menggunakan field _id
+selain itu primary key tidak bisa lebih dari 1 field,hanya bisa filed _id,
+jadi jika kita ingin membuat composite primary key,maka kita hanya bisa melakukan dengan menggunakan
+1 field _id
