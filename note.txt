@@ -63,3 +63,16 @@ menggunakan field _id
 selain itu primary key tidak bisa lebih dari 1 field,hanya bisa filed _id,
 jadi jika kita ingin membuat composite primary key,maka kita hanya bisa melakukan dengan menggunakan
 1 field _id
+
+Embedded VS Reference
+ Embedded : 
+> Antar Document saling ketergantungan
+> tidak bisa langsung melakukan perubahan ke embedded document
+> embedded document selalu dibuthkan ketika mengambil data document
+
+Reference :
+
+> Antar Document bisa berdiri sendiri dan tidak terlalu ketergantungan satu sama
+lain
+> Bisa melakukan manipulasi data langsung terhadap reference document
+> REference document tidak selalu dibuthkan saat mengambil document
