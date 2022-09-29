@@ -6,12 +6,24 @@ db.customers.insertMany([
         nama : 'adddddd',
         addres : 'kalocm',
         price : new NumberLong(2111)
-// default dari number adalah tipe data double 
-// kalau mau tipedatanya int maka gunakan new NumberInt
     },
     {
-        nama : 'adddddd',
-        addres : 'kalocm'
+        nama : 'laok',
+        addres : 'kalocm',
+        price : 3000,
+        category : 'scifi'
+    },
+    {
+        nama : 'koko',
+        addres : 'kalocm',
+        price : 2500,
+        category : 'comedy'
+    },
+    {
+        nama : 'addd',
+        addres : 'kalocm',
+        price : 2000,
+        category : 'horror'
     }
 ])
 

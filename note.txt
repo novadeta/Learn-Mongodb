@@ -13,7 +13,7 @@ Istilah Relational vs Document
 Table - Collection
 Column - Field
 Row,Record - Document
-Join Table - Embedded Document,Referebce
+Join Table - Embedded Document,Reference
 SQL - Js(Mongodb)
 
 DATABASE
@@ -111,3 +111,7 @@ $lte > membandingkan value lebih kecil atau sama dengan value lain
 $in > membandingkan value dengan value yang ada di array
 $nin > membandingkan value tidak ada dalam value yang ada di array
 $ne > membandingkan value tidak sama dengan value lain
+
+Element Operator
+$exists > mencocokkan document yang memiliki field tersebut
+$type > mencocokkan document yang memiliki type field tersebut
