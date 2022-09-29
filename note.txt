@@ -115,3 +115,11 @@ $ne > membandingkan value tidak sama dengan value lain
 Element Operator
 $exists > mencocokkan document yang memiliki field tersebut
 $type > mencocokkan document yang memiliki type field tersebut
+
+Evaluation Operator
+$expr > Menggunakan aggregation operation
+$jsonScehma > Validasi document sesuai dengan JSON Schema
+$mod > melakukan operasi modulo
+$regex > mengambil document sesuai dengan regular expression
+$text > Melakukan pencarian menggunakan text
+$where > mengambil document dengan Javscript function
