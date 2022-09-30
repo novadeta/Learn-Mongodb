@@ -104,13 +104,13 @@ pencarian document yang sudah kita simpan di collection
 Comparison Query Operator
 
 $eq > membandingkan value dengan value lain
+$ne > membandingkan value tidak sama dengan value lain
 $gt > membandingkan value lebih besat dari value lain
 $gte > membandingkan value lebih besar atau sama dengan value lain
 $lt > membandingkan value lebih kecil dari value lain
 $lte > membandingkan value lebih kecil atau sama dengan value lain
 $in > membandingkan value dengan value yang ada di array
 $nin > membandingkan value tidak ada dalam value yang ada di array
-$ne > membandingkan value tidak sama dengan value lain
 
 Element Operator
 $exists > mencocokkan document yang memiliki field tersebut
@@ -123,3 +123,23 @@ $mod > melakukan operasi modulo
 $regex > mengambil document sesuai dengan regular expression
 $text > Melakukan pencarian menggunakan text
 $where > mengambil document dengan Javscript function
+
+Array Query Operator
+khusus pengecekan di array
+$all > mencocokkan array pada field yang memiliki array kalau ada kembalikan
+$elemMatch > mengambil document jika tiap element di array memenuhi kondisi tertentu
+$size > mengambil document jika ukuran array sesuai
+
+Projection
+pada function find,terdapat parameter kedua setelah query,yaitu Projection
+Projection adalah memilih field mana yang ingin kita ambil atau hide
+db.<collection>.find(<query>,projection)
+kalau 1 > include jadi yang dikasih value 1 aja yang ditampilkan selain field yang dikasih
+nilai 1 field lainnya di hide
+kalau 0 > di hide jadi field yang dikasi value 0 saja yang di hide
+
+Projection Operator
+$ > Limit array hanya mengembalikan data pertama yang match dengan array Operator
+$elemMatch >  limit array hanya mengembalikan data pertama yang match dengan kondisi query
+$meta > mengembalikan informasi metada yang didapat dari setiap matching document
+$slice > mengontrol jumlah data yang ditampilkan pada array

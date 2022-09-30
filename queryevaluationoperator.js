@@ -1,0 +1,6 @@
+db.costumers.find({
+    $expr : {
+        
+    }
+})
+

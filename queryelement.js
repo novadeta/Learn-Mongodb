@@ -13,3 +13,4 @@ db.customers.find({
         $type : ["int","long"]
     }
 })
+
