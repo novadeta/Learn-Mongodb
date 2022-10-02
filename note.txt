@@ -143,3 +143,71 @@ $ > Limit array hanya mengembalikan data pertama yang match dengan array Operato
 $elemMatch >  limit array hanya mengembalikan data pertama yang match dengan kondisi query
 $meta > mengembalikan informasi metada yang didapat dari setiap matching document
 $slice > mengontrol jumlah data yang ditampilkan pada array
+
+Query Modifier 
+query modifier adalah memodifikasi hasil query yang telah kita lakukan
+Contoh yang sering kita lakukan seperti,mengubah query menjadi jumlah data,membatasi jumlah data
+dengan paging,dan lain lain
+untuk memodifikasi hasil query,kita bisa menambahkan fucntion query modifier setelah menggunakan
+function find
+
+count > mengambil jumlah data hasil query
+limit(size) > membatasi jumlah data yang didapat dari query
+skip(size) > menghiraukan data pertama hasil query sejumlah yang ditentukan
+sort(query) > mengurutkan hasil data query
+
+Update Document
+sama seperti database lainnya,di MongoDB juga kita bisa mengubah document yang sudah kita
+insert ke collection
+Namun berbeda dengan perintah SQL,di mongodb,untuk mengubah document
+kita diberikan beberapa function
+untuk update document kita bisa menggunakan collection
+updateOne() > mengubah satu document
+updateMany > mengubah banayak document sekaligus
+replaceOne > mengubah total satu document dengan document yang baru
+
+Field Update Operator
+
+kita sudah tahu kalo untuk update document di MongoDB kita bisa
+menggunakan operator $set dan $unset
+Namun sebenarnya masih banyak operator yang bisa kita gunakan
+$set > mengubah document
+$unset > menghapus field
+$rename > mengubah nama field di document
+$inc > menaikkan nilai number di field sesuai dengan jumlah tertentu
+$currentDate > mengubah field menjadi waktu saat ini
+
+Array Update Operator
+ketika kita mengubah field dengan tipe array maka seluruh array akan berubah
+$ > mengupdate data array pertama sesuai kondisi query
+$[] > mengupdate semua data array sesuai kondisi query
+$[<identifier>] > mengupdate semua data array yang sesuai kondisi arrayfilters
+<index> mengupdate data array sesuai dengan nomor index
+$addToSet > menambahkan value ke array,dihiraukan jika sudah ada
+$pop > menghapus element pertama (-1) atau terakhir (1) pada array
+$pull > menghapus semua elemnt di array yang sesuai kondisi
+$push menambahkan element ke array
+$pushAll > menghapus semua element di array
+
+digunakan di push atau addToSet
+$each > digunakan di addToset dan push untuk menambahkan  multiple element di array
+$position > digunakan di $push untuk mengubah poisis menambahkan data
+$slice > digunakan di $push untuk menentukan jumlah maksimal data array
+$sort > digunakan untuk mengurutkan array setelah operasi $push
+
+Delete Document
+deleteOne(query) > menghapus 1 document
+deleteMany(query) > menghapus banyak document
+
+Bulk Write Operation
+komunikasi antara aplikasi dengan database biasanya dilakukan secara req - res
+artinya tiap perintah yang ingin kita kirimkan dari aplikasi ke database,akan diresponse secara langsung oleh 
+database
+proses tersebut akan sangat lambat,jika kita menghadapi kasus harus memanipulasi data besar
+secara langsung,misal upload data dari file dengan jumlah jutaan ke dalam database
+mongodb mendukung bulk write operation,yaitu operasi bulk yang dalam satu request,kita bisa mengirim banyak perintah
+fitur ini cocok pada kasus jika kita ingin melakukan operasi bulk atau batch secara banyak sekaligus
+inserMany 
+updateMany
+deleteMany
+bulWrite > ketika kita ingin mengkombinasi insert update delete
