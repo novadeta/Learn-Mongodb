@@ -29,4 +29,16 @@ db.customers.updateOne(
     }
 )
 
- 
+ db.customers.updateOne({
+    _id : ObjectId('63325648f9fba77313c518ea')
+ },{
+    $rename : {
+        addres : "oke"
+    },
+    $set : {
+        nama : "lia"
+    },
+    $inc : {
+        price : 1
+    }
+ })

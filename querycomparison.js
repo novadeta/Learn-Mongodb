@@ -24,8 +24,8 @@ db.customers.find({
 
 
 db.customers.find({
-    price : {
-        $
+    category : {
+        $eq : "scifi"
     }
 })
 
