@@ -251,3 +251,27 @@ MongoDB menyediakan text index untuk mendukung pencarian text di tipe data strin
 text index tidak hanya bisa digunakan pada field dengan tipe data string,namun juga pada array berisi tipe data string
 
 Wildcard Indexes
+MongoDB mendukung wildcard index,dimana ini digunakan untuk membuat index
+terhadap field yang belum diketahui atau field yang sering berubah ubah
+misal contoh kita punya sebuah emebdded document dengan tipe field customFields,dimana
+isinya bisa bebas sesuai dengan data yang dimasukkan.
+agar bisa mendukung proses query yang cepat pada field tersebut kita bisa menggunakan wildcard index
+
+
+Index Properties
+mongodb mendukung properties di index
+istilah properties di index mungkin agak sedikit membingungkan,sederhananya adalah
+menambahkan behaviour atau kemampuan tertentu terhadap index yang kita buat
+
+TTL Index
+TTL singkatan dari TIme To Live,yaitu waktu untuk hidup
+TTL Index digunakan sebagai waktu hidup document di collection,artinya data akan hilang dalam kurun waktu
+tertentu secara otomatis
+TTL Index hanya dapat digunakan di field dengan tipe data Date
+background proses di MongoDB akan secara regular melakukan penghapusan data secara otomatis
+sayangnya proses background tersebut berjalan setiap 60 detik sekali
+
+Unique Index
+memastikan bahwa field2 di index tersebut tidak menyimpan data duplicate
+contohnya di mongodb field _id secara otomatis merupakan unique index,sehingga
+kita tidak bisa membuat documend dengan field _id yang sama
