@@ -275,3 +275,36 @@ Unique Index
 memastikan bahwa field2 di index tersebut tidak menyimpan data duplicate
 contohnya di mongodb field _id secara otomatis merupakan unique index,sehingga
 kita tidak bisa membuat documend dengan field _id yang sama
+
+Transaction
+di relational db,fitur yang sangat berguna dan banyak orang gunakan adalah fitur Transaction
+fitu Transaction secara sederhana adalah menggabungkan beberapa operasi database dalam satu transaction,
+dimana transaction akan dianggap sukses jika semua operasi sukses dan transaction
+akan dianggap gagal,maka seluruh operasi yang sukses sebelumnya harus dibatalkan (rollback)
+fitur transaction di mongodb hanya bisa jalan di cluster (replicat-set),tidak di single node
+Dalam cluster,Database di MongoDB akan memiliki primary data dan secondary data
+session.startTransaction() > Memulai transaksi
+session.commitTransaction() > Commit transaksi
+session.abortTransaction() > Mmebatalkan transaksi
+
+Read Preferences
+adalah bagaimana MongoDB mengkontrol dari mana kita membaca data
+primary: semua query diambil dari primary replica set
+primaryPreferred: semua query diambil dari primary replica set,namun jika tidak ada
+primary replica set,maka diambil dari secondary replica set
+secondaryPreferred : semua query diambil dari secondari replica set,namun jika tidak ada
+secondary replica set,maka diambil dari primary replica set
+nearest : semua query diambil dari replica set paling murah network latency nya
+
+Read Concern
+adalah bagaiman MongoDB mengkontrol data yang kita dapatkan
+
+local: Data akan didapatkan di local node
+available: Data akan didapatkan dimanapun (tidak peduli node mana)
+majority : data akan didapatkan di mayoritas data di semua node
+linearizable : data akan dipastikaa data paling terbaru di semua node
+snapshot : data akan diambil dari mayoritas data snapshot(data yang telah di commit) di semua node
+
+
+
+Security
