@@ -308,3 +308,37 @@ snapshot : data akan diambil dari mayoritas data snapshot(data yang telah di com
 
 
 Security
+secara default,jika kita menjalankan mongoDB,mode yang dijalankan tidaklah aman
+tidak ada authentication dan tidak ada Authorization
+agar aman kita harus mengaktifkan access control di MongoDB
+
+User Admin 
+user admin harus ada terlebih dahulu sebelum kita mengaktifkan access control
+user admin adalah user yang memiliki role userAdminAnyDatabase dan readWriteAnyDatabase
+setelah membuat user admin,kita bisa menjalankan ulang mongodb dengan perintah --auth
+
+Authorization 
+adalah proses yang dilakukan setelah proses authentication sukses
+authorization dilakukan untuk melakukan pengecekan apakah user memiliki hak akses untuk melakukan
+sebuah action
+Hak akses di mongodb disimpan dalam bentuk role
+
+Read > bisa membaca data di semua collection di databasenya 
+readWrite > bisa membaca dan mengubah data di semua collection yang bukan sistem collection
+dbAdmin > bisa melakukan kemampuan administrasi database
+userAdmin > mampu membuat user dan role
+dbOwner > kombinasi readWrite,dbAdmin dan userAdmin
+
+All database roles
+readAnyDatabse > seperti read role tapi untuk semua database
+readWriteAntDatabase > seperti readWrite role,tapi untuk semua database
+userAdminAnyDatabase > seperti userAdmin tapi untuk semua database
+dbAdminAnyDatabase > sepeprti dbAdmin tapi untuk semua database
+
+Backup & Restore roles
+backup > kemampuan untuk melakukan backup database
+restore > kemampuan untuk melakukan restore database
+ 
+root > bisa melakukan apapun
+privilage
+r
