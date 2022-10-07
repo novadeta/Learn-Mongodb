@@ -15,7 +15,7 @@ db.customers.createIndex({
 // ada kata lia or laptop
 db.customers.find({
     $text: {
-        $search: "lia addd"
+        $search: "lia laptop"
     }
 })
 // text dengan lia addd buka or ini 
